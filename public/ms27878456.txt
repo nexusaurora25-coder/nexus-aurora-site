@@ -1,0 +1,5 @@
+{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "nexus-aurora.com",
+  "Id": "469548f4-b55c-4f19-b0f0-1048dd598239"
+}
