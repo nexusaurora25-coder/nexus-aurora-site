@@ -17,7 +17,7 @@ const NexusBot = () => {
 
   useSEO({
     title: 'NexusBot — WhatsApp AI for Malaysian SMEs | Nexus Aurora',
-    description: "NexusBot answers, qualifies and books your customers on WhatsApp in Bahasa or English. Plans from a free 7-day trial to Enterprise. Built by Nexus Aurora for Malaysian SMEs.",
+    description: "NexusBot answers, qualifies and books your customers on WhatsApp in English, Bahasa or Chinese. Plans from a free 7-day trial to Enterprise. Built by Nexus Aurora for Malaysian SMEs.",
     keywords: 'WhatsApp AI Malaysia, WhatsApp chatbot SME, WhatsApp automation Malaysia, AI customer service WhatsApp, NexusBot, Nexus Aurora WhatsApp bot',
     canonicalUrl: 'https://nexus-aurora.com/nexusbot',
     breadcrumbs: [
@@ -30,7 +30,7 @@ const NexusBot = () => {
       "@type": "Product",
       "name": "NexusBot",
       "brand": { "@type": "Brand", "name": "Nexus Aurora" },
-      "description": "WhatsApp AI assistant that answers, qualifies, and books customers for Malaysian SMEs, in Bahasa or English.",
+      "description": "WhatsApp AI assistant that answers, qualifies, and books customers for Malaysian SMEs, in English, Bahasa or Chinese.",
       "offers": [
         { "@type": "Offer", "name": "Trial", "price": "0", "priceCurrency": "MYR" },
         { "@type": "Offer", "name": "Pro", "price": "479", "priceCurrency": "MYR" },

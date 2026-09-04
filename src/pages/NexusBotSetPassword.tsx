@@ -5,7 +5,7 @@ import { CheckCircle, AlertTriangle, MessageCircle } from 'lucide-react';
 import { useSEO } from '../utils/seo';
 import { nexusBotWhatsAppLink } from '../components/nexusbot/constants';
 
-const WACRM_LOGIN_URL = 'https://crm.nexus-aurora.com/login';
+const WACRM_LOGIN_URL = 'https://app.nexus-aurora.com/login';
 
 // This page talks directly to wacrm-main's Supabase Auth (the app's own
 // project, a different Supabase project from this website's own) using

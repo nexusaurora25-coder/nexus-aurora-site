@@ -26,8 +26,8 @@ const NexusBotHero: React.FC = () => {
               <span className="text-accent">while you're not.</span>
             </h1>
             <p className="text-lg text-primary-100 leading-relaxed max-w-xl">
-              NexusBot answers, qualifies and books your customers on WhatsApp in Bahasa or
-              English — so your team spends less time typing and more time closing.
+              NexusBot answers, qualifies and books your customers on WhatsApp in English,
+              Bahasa or Chinese so your team spends less time typing and more time closing.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <button

@@ -5,7 +5,7 @@ import { AnimatedDot } from './AnimatedIllustrations';
 
 const bullets = [
   '24/7 replies — never miss a customer message again',
-  'Bilingual: answers in Bahasa Malaysia or English',
+  'Trilingual: answers in English, Bahasa Malaysia or Chinese',
   'Qualifies leads and books appointments automatically',
 ];
 
