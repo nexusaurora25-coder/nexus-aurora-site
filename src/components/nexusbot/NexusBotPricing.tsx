@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Check, X, MessageCircle, Loader2 } from 'lucide-react';
-import { nexusBotPlans, nexusBotWhatsAppLink } from './constants';
+import { nexusBotPlans, nexusBotWhatsAppLink, NEXUSBOT_LOGIN_URL } from './constants';
+
+// Stripe self-checkout (create-checkout + stripe-webhook Edge Functions) is
+// built and works end-to-end — but is paused for now: Pro/Business "Get
+// started" and Trial "Start free trial" link to the app's own /signup
+// instead, so every visitor creates a real NexusBot account (auto-starts
+// on Trial) before any payment is collected. Flip this back to true to
+// resume real Stripe Checkout from this page — no other change needed.
+const SELF_CHECKOUT_ENABLED = false;
 
 const NexusBotPricing: React.FC = () => {
   const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly');
@@ -119,7 +127,7 @@ const NexusBotPricing: React.FC = () => {
                         : plan.billedNote)}
                 </p>
 
-                {plan.checkoutTier ? (
+                {plan.checkoutTier && SELF_CHECKOUT_ENABLED ? (
                   <button
                     type="button"
                     onClick={() => handleCheckout(plan.checkoutTier!)}
@@ -135,6 +143,17 @@ const NexusBotPricing: React.FC = () => {
                     )}
                     {loadingTier === plan.checkoutTier ? 'Redirecting…' : plan.ctaLabel}
                   </button>
+                ) : plan.checkoutTier || plan.ctaTarget === 'app' ? (
+                  <a
+                    href={NEXUSBOT_LOGIN_URL}
+                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mb-6 ${
+                      plan.featured
+                        ? 'bg-primary-600 text-white hover:bg-primary-700'
+                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
+                    }`}
+                  >
+                    {plan.ctaLabel}
+                  </a>
                 ) : (
                   <a
                     href={nexusBotWhatsAppLink(`Hi, I'm interested in the NexusBot ${plan.name} plan.`)}

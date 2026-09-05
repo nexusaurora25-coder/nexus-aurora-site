@@ -1,5 +1,5 @@
 import React from 'react';
-import { nexusBotWhatsAppLink } from './constants';
+import { NEXUSBOT_LOGIN_URL } from './constants';
 
 const NexusBotCtaBand: React.FC = () => {
   return (
@@ -10,9 +10,7 @@ const NexusBotCtaBand: React.FC = () => {
           7 days free. No commitment. Set up takes less than a day.
         </p>
         <a
-          href={nexusBotWhatsAppLink('Hi, I would like to start a NexusBot free trial.')}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={NEXUSBOT_LOGIN_URL}
           className="inline-block bg-white text-primary-800 px-8 py-4 rounded-full font-semibold hover:bg-primary-50 transition-colors"
         >
           Start free trial

@@ -5,6 +5,16 @@ export const NEXUSBOT_WHATSAPP_NUMBER = '60128859759';
 export const nexusBotWhatsAppLink = (message: string) =>
   `https://wa.me/${NEXUSBOT_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
+// The NexusBot app (wacrm-main). Used while Stripe self-checkout on this
+// marketing site is paused (see SELF_CHECKOUT_ENABLED in
+// NexusBotPricing.tsx) — every pricing CTA (Trial, Pro, Business) sends
+// the visitor straight to the app's login page instead. Plan selection
+// and payment happen inside the app itself (manual "Change plan" for
+// testing/Enterprise today, real self-checkout later) — not via a query
+// param on this marketing site, so no ?plan= is appended here.
+export const NEXUSBOT_APP_URL = 'https://app.nexus-aurora.com';
+export const NEXUSBOT_LOGIN_URL = `${NEXUSBOT_APP_URL}/login`;
+
 export interface NexusBotPlan {
   name: string;
   tagline: string;
@@ -17,12 +27,19 @@ export interface NexusBotPlan {
   tag?: string;
   ctaLabel: string;
   features: { text: string; included: boolean }[];
-  /** Set only on self-serve paid plans (Pro/Business) — Trial and
-   * Enterprise omit this and fall back to the WhatsApp CTA instead.
-   * When present, the pricing card's CTA creates a real Stripe Checkout
-   * Session (via the create-checkout Edge Function) for this tier
-   * instead of linking out to a static Payment Link. */
+  /** Set only on self-serve paid plans (Pro/Business). The real Stripe
+   * Checkout flow behind this (create-checkout + stripe-webhook Edge
+   * Functions) is built and working, but is currently paused — see
+   * SELF_CHECKOUT_ENABLED in NexusBotPricing.tsx — so for now this CTA
+   * links to the app's own /login instead of creating a live Checkout
+   * Session. Flip that flag back on to resume real Stripe checkout
+   * without touching this file. */
   checkoutTier?: 'pro' | 'business';
+  /** For plans WITHOUT checkoutTier, where the CTA goes: 'app' (the
+   * NexusBot app's /login — used for Trial) or 'whatsapp' (chat link —
+   * used for Enterprise/"Talk to sales"). Defaults to 'whatsapp' if
+   * omitted. */
+  ctaTarget?: 'app' | 'whatsapp';
 }
 
 export const nexusBotPlans: NexusBotPlan[] = [
@@ -33,6 +50,7 @@ export const nexusBotPlans: NexusBotPlan[] = [
     priceAnnual: 0,
     billedNote: 'No card required · 7 days',
     ctaLabel: 'Start free trial',
+    ctaTarget: 'app',
     features: [
       { text: '1 connected channel (WhatsApp or Telegram)', included: true },
       { text: '1 team seat', included: true },
@@ -87,6 +105,7 @@ export const nexusBotPlans: NexusBotPlan[] = [
     customNote: 'From RM 1,500 / mo',
     billedNote: '',
     ctaLabel: 'Talk to sales',
+    ctaTarget: 'whatsapp',
     features: [
       { text: 'Unlimited connected channels', included: true },
       { text: 'Unlimited team seats', included: true },
