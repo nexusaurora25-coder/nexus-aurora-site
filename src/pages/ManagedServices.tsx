@@ -63,7 +63,7 @@ const ManagedServices = () => {
   }, [location]);
 
   useSEO({
-    title: 'Managed IT Services (MSP) Malaysia - 24/7 IT Support & Monitoring',
+    title: 'Managed IT Services & 24/7 IT Support in Malaysia',
     description: 'Enterprise-grade Managed IT Services from Nexus Aurora, powered by Pioneer Infotech Singapore. 24/7 monitoring, proactive maintenance, helpdesk support, and comprehensive IT management for Malaysian businesses with 99.9% uptime SLA.',
     keywords: 'managed IT services Malaysia, MSP Malaysia, managed service provider Kota Kinabalu, 24/7 IT support Malaysia, IT monitoring, proactive IT management, helpdesk support, IT outsourcing Sabah, Pioneer Infotech partner, enterprise IT services',
     canonicalUrl: 'https://nexus-aurora.com/managed-services',
@@ -425,9 +425,6 @@ const ManagedServices = () => {
                 <span>Schedule Free Consultation</span>
                 <ArrowRight className="h-5 w-5" />
               </a>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-colors">
-                Download MSP Service Guide
-              </button>
             </div>
           </div>
         </div>

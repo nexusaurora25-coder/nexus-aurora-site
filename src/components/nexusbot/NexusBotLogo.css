@@ -1,0 +1,168 @@
+/* ---------- NexusBot logo ---------- */
+.nexusbot {
+  --nexusbot-primary: #3cc4f4;
+  --nexusbot-mid: #2186e0;
+  --nexusbot-secondary: #3552d8;
+  --nexusbot-eye: #46aef0;
+  --nexusbot-eye-shade: #2c63dc;
+  --nexusbot-badge: #2aa8ec;
+  --nexusbot-badge-shade: #2363d6;
+  --nexusbot-glint: #ffffff;
+  --nexusbot-sparkle: #ffffff;
+  --nexusbot-sparkle-glow: rgb(170 230 255 / 0.95);
+  --nexusbot-glow: rgb(41 185 232 / 0.35);
+  --nexusbot-text: #ffffff;
+  --nexusbot-bot-text: #29b9e8;
+  --nexusbot-ring: #29b9e8;
+  --nexusbot-eye-max-x: 18px;
+  --nexusbot-eye-max-y: 12px;
+  --nexusbot-eye-rest-x: 0px;
+  --nexusbot-eye-rest-y: -3px;
+}
+.nexusbot[data-theme="light"] {
+  --nexusbot-primary: #2ab1ec;
+  --nexusbot-mid: #1168c3;
+  --nexusbot-secondary: #132599;
+  --nexusbot-eye: #1f8ad2;
+  --nexusbot-eye-shade: #1545b0;
+  --nexusbot-badge: #1e9ee0;
+  --nexusbot-badge-shade: #1952be;
+  --nexusbot-sparkle-glow: rgb(255 255 255 / 0.7);
+  --nexusbot-glow: rgb(22 137 216 / 0.12);
+  --nexusbot-text: #0b1220;
+  --nexusbot-bot-text: #1689d8;
+  --nexusbot-ring: #1689d8;
+}
+@media (prefers-color-scheme: light) {
+  .nexusbot:not([data-theme]) {
+    --nexusbot-primary: #2ab1ec;
+    --nexusbot-mid: #1168c3;
+    --nexusbot-secondary: #132599;
+    --nexusbot-eye: #1f8ad2;
+    --nexusbot-eye-shade: #1545b0;
+    --nexusbot-badge: #1e9ee0;
+    --nexusbot-badge-shade: #1952be;
+    --nexusbot-sparkle-glow: rgb(255 255 255 / 0.7);
+    --nexusbot-glow: rgb(22 137 216 / 0.12);
+    --nexusbot-text: #0b1220;
+    --nexusbot-bot-text: #1689d8;
+    --nexusbot-ring: #1689d8;
+  }
+}
+@property --nexusbot-eye-scale { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --nexusbot-eye-squash { syntax: "<number>"; inherits: true; initial-value: 1; }
+@property --nexusbot-eye-lift { syntax: "<length>"; inherits: true; initial-value: 0px; }
+
+.nexusbot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: 0.5rem;
+  outline: none;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+.nexusbot--below { flex-direction: column; gap: 0.35em; }
+.nexusbot-svg {
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+  transition: transform 180ms ease-out, filter 180ms ease-out;
+  filter: drop-shadow(0 0 var(--nexusbot-glow-blur, 6px) var(--nexusbot-glow));
+}
+.nexusbot-name {
+  font-family: "Sora", system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: var(--nexusbot-text);
+}
+.nexusbot-name b { font-weight: inherit; color: var(--nexusbot-bot-text); }
+
+.nexusbot--interactive { cursor: pointer; }
+.nexusbot--interactive:hover .nexusbot-svg {
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 calc(var(--nexusbot-glow-blur, 6px) * 1.4) var(--nexusbot-glow));
+}
+.nexusbot--interactive:focus-visible { box-shadow: 0 0 0 3px var(--nexusbot-ring); }
+.nexusbot[data-press] .nexusbot-svg { animation: nexusbot-press 260ms ease-out; }
+@keyframes nexusbot-press {
+  0% { transform: scale(1); }
+  35% { transform: scale(0.98); }
+  70% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.nexusbot-eye {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: translate3d(
+      var(--nexusbot-eye-x, var(--nexusbot-eye-rest-x)),
+      calc(var(--nexusbot-eye-y, var(--nexusbot-eye-rest-y)) + var(--nexusbot-eye-lift)),
+      0
+    )
+    scaleY(calc(var(--nexusbot-eye-scale) * var(--nexusbot-eye-squash)));
+}
+.nexusbot-glint {
+  transform: translate(
+    calc(var(--nexusbot-eye-x, 0px) * 0.25),
+    calc(var(--nexusbot-eye-y, 0px) * 0.25)
+  );
+}
+
+.nexusbot-svg[data-blink] .nexusbot-eye { animation: nexusbot-blink 150ms ease-in-out; }
+.nexusbot-svg[data-blink] .nexusbot-eye-right { animation-delay: var(--nexusbot-blink-stagger, 0ms); }
+@keyframes nexusbot-blink {
+  0% { --nexusbot-eye-scale: 1; }
+  30% { --nexusbot-eye-scale: 0.5; }
+  55% { --nexusbot-eye-scale: 0.08; }
+  100% { --nexusbot-eye-scale: 1; }
+}
+
+.nexusbot-svg[data-happy] .nexusbot-eye { animation: nexusbot-happy 900ms cubic-bezier(0.3, 0.7, 0.3, 1); }
+.nexusbot-svg[data-happy] .nexusbot-eyes { animation: nexusbot-happy-glow 900ms ease-in-out; }
+@keyframes nexusbot-happy {
+  0% { --nexusbot-eye-squash: 1; --nexusbot-eye-lift: 0px; }
+  25% { --nexusbot-eye-squash: 0.55; --nexusbot-eye-lift: -10px; }
+  70% { --nexusbot-eye-squash: 0.55; --nexusbot-eye-lift: -10px; }
+  100% { --nexusbot-eye-squash: 1; --nexusbot-eye-lift: 0px; }
+}
+@keyframes nexusbot-happy-glow {
+  0%, 100% { filter: none; }
+  35%, 70% { filter: drop-shadow(0 0 8px var(--nexusbot-glow)); }
+}
+
+.nexusbot-star { transform-box: fill-box; transform-origin: center; }
+.nexusbot-svg[data-sparkle] .nexusbot-star-lg { animation: nexusbot-twinkle-lg 800ms ease-in-out; }
+.nexusbot-svg[data-sparkle] .nexusbot-star-sm { animation: nexusbot-twinkle-sm 700ms ease-in-out 80ms both; }
+.nexusbot-svg[data-sparkle="happy"] .nexusbot-star-lg { animation: nexusbot-twinkle-happy 600ms ease-out; }
+@keyframes nexusbot-twinkle-lg {
+  0% { opacity: 1; transform: scale(1); filter: none; }
+  20% { opacity: 0.7; transform: scale(0.95); }
+  40% { opacity: 0.3; transform: scale(0.9); }
+  70% { opacity: 0.8; transform: scale(1.08); filter: drop-shadow(0 0 6px var(--nexusbot-sparkle-glow)); }
+  100% { opacity: 1; transform: scale(1); filter: none; }
+}
+@keyframes nexusbot-twinkle-sm {
+  0% { opacity: 1; transform: scale(1); }
+  40% { opacity: 0.35; transform: scale(0.9); }
+  75% { opacity: 1; transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes nexusbot-twinkle-happy {
+  0% { opacity: 1; transform: scale(1); filter: none; }
+  45% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 10px var(--nexusbot-sparkle-glow)); }
+  100% { opacity: 1; transform: scale(1); filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexusbot-svg,
+  .nexusbot[data-press] .nexusbot-svg,
+  .nexusbot-svg[data-blink] .nexusbot-eye,
+  .nexusbot-svg[data-happy] .nexusbot-eye,
+  .nexusbot-svg[data-happy] .nexusbot-eyes,
+  .nexusbot-svg[data-sparkle] .nexusbot-star { animation: none; transition: none; }
+  .nexusbot--interactive:hover .nexusbot-svg { transform: none; }
+}
+/* ---------- end NexusBot logo ---------- */

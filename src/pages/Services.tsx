@@ -27,7 +27,7 @@ const faqItems: FAQItem[] = [
 
 const Services = () => {
   useSEO({
-    title: 'IT Services Malaysia - MSP, Cybersecurity, Cloud, Web & Mobile Development',
+    title: 'IT Services for Businesses in Sabah & Malaysia',
     description: 'Comprehensive IT services for Malaysian businesses: Managed IT (MSP), ISO 27001 Cybersecurity, Cloud Hosting, Web Development, Mobile App Development, and IT Consultancy. Powered by Pioneer Infotech Singapore with 17+ years APAC expertise.',
     keywords: 'IT services Malaysia, managed IT services, MSP Malaysia, cybersecurity Malaysia, cloud hosting Malaysia, web development Malaysia, mobile app development, IT consultancy Sabah, Pioneer Infotech, Kota Kinabalu IT company',
     canonicalUrl: 'https://nexus-aurora.com/services',
@@ -103,6 +103,15 @@ const Services = () => {
             "@type": "Service",
             "name": "Mobile App Development",
             "url": "https://nexus-aurora.com/mobile-app-development"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "Structured Cabling",
+            "url": "https://nexus-aurora.com/structured-cabling"
           }
         }
       ]

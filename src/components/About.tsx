@@ -10,9 +10,16 @@ import {
   PinIllustration,
   AnimatedDot,
 } from './AnimatedIllustrations';
+import { useCountUp } from '../hooks/useCountUp';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
+
+  // Animated count-up for the numeric stats. "27001:2022" (ISO cert code) is
+  // not a count, so it stays static text below rather than going through the hook.
+  const years = useCountUp<HTMLDivElement>(17, { suffix: '+' });
+  const markets = useCountUp<HTMLDivElement>(10, { suffix: '+' });
+  const clients = useCountUp<HTMLDivElement>(500, { suffix: '+' });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,10 +40,10 @@ const About = () => {
   }, []);
 
   const stats = [
-    { illustration: ClockIllustration, label: 'Years Experience', value: '17+' },
-    { illustration: GlobeIllustration, label: 'APAC Markets', value: '10+' },
-    { illustration: AwardIllustration, label: 'ISO Certified', value: '27001:2022' },
-    { illustration: TeamIllustration, label: 'SME Clients', value: '500+' }
+    { illustration: ClockIllustration, label: 'Years Experience', value: years.value, ref: years.ref },
+    { illustration: GlobeIllustration, label: 'APAC Markets', value: markets.value, ref: markets.ref },
+    { illustration: AwardIllustration, label: 'ISO Certified', value: '27001:2022', ref: undefined },
+    { illustration: TeamIllustration, label: 'SME Clients', value: clients.value, ref: clients.ref }
   ];
 
   const values = [
@@ -80,6 +87,14 @@ const About = () => {
               </p>
             </div>
 
+            <img
+              src="/generated/about-local-team.jpg"
+              alt="Nexus Aurora and Pioneer Infotech team collaborating"
+              className="w-full aspect-video object-cover rounded-2xl shadow-lg"
+              loading="lazy"
+              decoding="async"
+            />
+
             <div className="space-y-4">
               <p className="text-gray-600 leading-relaxed">
                 We operate as Pioneer Infotech's dedicated Malaysian arm, sharing their robust service frameworks, skilled regional teams, and proven MSP methodologies. This means you get access to enterprise-level managed services, vendor partnerships, and support infrastructure typically available only to much larger organizations.
@@ -97,7 +112,7 @@ const About = () => {
                     <div className="h-10 w-10 bg-gradient-to-br from-primary-500 to-primary-800 rounded-xl flex items-center justify-center mx-auto mb-3">
                       <Illustration className="h-6 w-6 text-white" />
                     </div>
-                    <div className="text-xl sm:text-3xl font-bold text-ink mb-1 break-words">{stat.value}</div>
+                    <div ref={stat.ref} className="text-xl sm:text-3xl font-bold text-ink mb-1 break-words">{stat.value}</div>
                     <div className="text-gray-600 text-xs sm:text-sm leading-tight">{stat.label}</div>
                   </div>
                 );

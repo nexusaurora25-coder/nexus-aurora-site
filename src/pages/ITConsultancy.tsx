@@ -52,7 +52,7 @@ const ITConsultancy = () => {
   }, [location]);
 
   useSEO({
-    title: 'IT Consultancy Services Malaysia - Hotel & Business Technology Planning',
+    title: 'IT Consultancy for Hotels & Businesses in Sabah',
     description: 'Expert IT consulting for hotels and businesses in Sabah & Kota Kinabalu. Infrastructure design, structured cabling, PABX, IPTV, wireless networks, vendor management, and full project oversight.',
     keywords: 'IT consultancy Malaysia, IT consulting Kota Kinabalu, hotel IT solutions Sabah, technology consulting Malaysia, IT infrastructure planning, structured cabling Malaysia, PABX IPTV setup, vendor management IT, business technology consulting Sabah',
     canonicalUrl: 'https://nexus-aurora.com/it-consultancy',
@@ -225,7 +225,7 @@ const ITConsultancy = () => {
 
             <div className="relative scroll-animate opacity-0 translate-x-[50px] transition-all duration-700 delay-300">
               <img
-                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/generated/it-consultancy.jpg"
                 alt="IT Consultancy Services"
                 className="rounded-2xl shadow-2xl"
               />

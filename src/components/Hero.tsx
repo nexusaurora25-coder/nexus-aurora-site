@@ -1,20 +1,60 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import {
   TeamIllustration,
   AwardIllustration,
   ChartIllustration,
 } from './AnimatedIllustrations';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
+import { useCountUp } from '../hooks/useCountUp';
+
+// Custom Higgsfield-generated brand video (navy/cyan data-stream visual) — self-hosted, re-encoded to ~450KB.
+const HERO_POSTER = '/generated/hero-network-poster.jpg';
+const HERO_VIDEO = '/generated/hero-network-bg.mp4';
 
 const Hero = () => {
+  const mediaWrapperRef = useRef<HTMLDivElement>(null);
+  const [videoFailed, setVideoFailed] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const { ref: businessesRef, value: businessesValue } = useCountUp<HTMLDivElement>(500, { suffix: '+' });
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    const handleScroll = () => {
+      if (mediaWrapperRef.current) {
+        mediaWrapperRef.current.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prefersReducedMotion]);
+
+  const showVideo = !prefersReducedMotion && !videoFailed;
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16 overflow-hidden w-full">
-      <div className="absolute inset-0 z-0">
+      <div ref={mediaWrapperRef} className="absolute inset-0 z-0 parallax-el">
         <img
-          src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+          src={HERO_POSTER}
           alt="IT Server Room Background"
           className="w-full h-full object-cover"
         />
+        {showVideo && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={HERO_POSTER}
+            onError={() => setVideoFailed(true)}
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-ink/85 to-ink/90"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
       </div>
@@ -52,7 +92,7 @@ const Hero = () => {
               <TeamIllustration className="h-5 w-5 text-primary-400" />
             </div>
             <div>
-              <div className="text-2xl font-bold text-white">500+</div>
+              <div ref={businessesRef} className="text-2xl font-bold text-white">{businessesValue}</div>
               <div className="text-gray-300">Protected Businesses</div>
             </div>
           </div>

@@ -96,6 +96,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
                   <Link to="/system-servers" onClick={handleNavClick} className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded transition-colors">
                     System Servers
                   </Link>
+                  <Link to="/structured-cabling" onClick={handleNavClick} className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded transition-colors">
+                    Structured Cabling
+                  </Link>
                   <Link to="/web-development" onClick={handleNavClick} className="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded transition-colors">
                     Web Development
                   </Link>
@@ -216,6 +219,13 @@ const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal }) => {
                   onClick={handleNavClick}
                 >
                   System Servers
+                </Link>
+                <Link
+                  to="/structured-cabling"
+                  className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600 hover:bg-paper rounded transition-colors"
+                  onClick={handleNavClick}
+                >
+                  Structured Cabling
                 </Link>
                 <Link
                   to="/web-development"

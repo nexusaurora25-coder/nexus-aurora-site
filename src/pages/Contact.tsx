@@ -26,7 +26,7 @@ const faqItems: FAQItem[] = [
 
 const Contact = () => {
   useSEO({
-    title: 'Contact Nexus Aurora - IT Services Kota Kinabalu, Sabah Malaysia',
+    title: 'Contact Us: IT Services in Kota Kinabalu, Sabah',
     description: 'Contact Nexus Aurora (M) Sdn Bhd for managed IT services, cybersecurity, cloud hosting, and web development in Malaysia. Office in Kota Kinabalu, Sabah. Call +60-12-885-9759 or email sales@nexus-aurora.com for a free consultation.',
     keywords: 'contact Nexus Aurora, IT company Malaysia contact, Kota Kinabalu IT services, managed IT services contact, cybersecurity Malaysia contact, web development contact, technology services Malaysia, free IT consultation',
     canonicalUrl: 'https://nexus-aurora.com/contact',

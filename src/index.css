@@ -27,3 +27,28 @@
     transform: translateY(0) translateX(0) !important;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-el,
+  .gradient-anim,
+  .marquee-track {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .msg-in {
+    animation: none !important;
+  }
+
+  .tick-read {
+    animation: none !important;
+    color: #4FC3F7 !important;
+  }
+
+  .scan-line {
+    animation: none !important;
+    top: 45% !important;
+    opacity: 1 !important;
+  }
+}

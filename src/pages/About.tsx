@@ -27,7 +27,7 @@ const faqItems: FAQItem[] = [
 
 const About = () => {
   useSEO({
-    title: 'About Nexus Aurora - ISO 27001 Certified IT Company Malaysia | 17+ Years APAC Experience',
+    title: 'About Us: ISO 27001 Certified IT Company in Sabah',
     description: 'Learn about Nexus Aurora (M) Sdn Bhd, an ISO/IEC 27001:2022 certified IT company in Kota Kinabalu, Sabah. Powered by Pioneer Infotech Singapore with 17+ years delivering managed IT services, cybersecurity, and web development across APAC.',
     keywords: 'about Nexus Aurora, IT company Malaysia, ISO 27001 certified, Pioneer Infotech Singapore, Kota Kinabalu IT company, technology partner APAC, Malaysian IT solutions, Sabah IT services',
     canonicalUrl: 'https://nexus-aurora.com/about',

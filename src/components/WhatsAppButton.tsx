@@ -5,8 +5,7 @@ const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     // Replace with your actual WhatsApp number (include country code without + sign)
     const phoneNumber = '60128859759';
-    const message = 'Hi Thanks for contacting Nexus Aurora.We provide local IT support in Kota Kinabalu & Sabah. How can we help?';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
     window.open(whatsappUrl, '_blank');
   };
 

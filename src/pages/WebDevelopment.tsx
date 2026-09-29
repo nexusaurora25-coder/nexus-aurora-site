@@ -52,7 +52,7 @@ const WebDevelopment = () => {
   }, [location]);
 
   useSEO({
-    title: 'Professional Web Development Malaysia - React, Next.js & Custom Websites',
+    title: 'Web Development in Kota Kinabalu & Malaysia',
     description: 'Custom website and web application development in Kota Kinabalu & Malaysia. Built with React, Next.js and TypeScript — responsive, SEO-optimised, and fast-loading for Sabah businesses.',
     keywords: 'web development Malaysia, custom website development Kota Kinabalu, React developer Malaysia, Next.js development Sabah, responsive web design Malaysia, SEO website development Malaysia, web application development, TypeScript developer Malaysia, website design Kota Kinabalu, affordable website Malaysia',
     canonicalUrl: 'https://nexus-aurora.com/web-development',
@@ -188,7 +188,7 @@ const WebDevelopment = () => {
             
             <div className="relative">
               <img 
-                src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="/generated/web-development.jpg" 
                 alt="Web Development Services" 
                 className="rounded-2xl shadow-2xl"
               />

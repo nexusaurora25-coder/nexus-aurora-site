@@ -49,26 +49,7 @@ const NexusBotHero: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="bg-primary-800 rounded-[28px] p-5 shadow-brand-lg border border-white/10">
-              <div className="bg-white rounded-2xl overflow-hidden">
-                <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100">
-                  <img
-                    src="/nexusbot-logo.jpeg"
-                    alt="NexusBot"
-                    className="h-9 w-9 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-semibold text-ink text-sm">NexusBot</div>
-                    <div className="text-xs text-gray-500">typically replies instantly</div>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <WhatsAppChatDemo />
-                </div>
-              </div>
-            </div>
-          </div>
+          <WhatsAppChatDemo />
         </div>
       </div>
     </section>

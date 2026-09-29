@@ -1,14 +1,14 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /_redirects
 
-User-agent: Googlebot
+# AI search and assistant crawlers are welcome, so the site can be cited in AI answers.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
 Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
 
 Sitemap: https://nexus-aurora.com/sitemap.xml

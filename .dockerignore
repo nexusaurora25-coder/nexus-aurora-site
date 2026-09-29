@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-server
+dist.tar.gz
+.env
+.env.*
+.git
+.claude
+Claude outputs

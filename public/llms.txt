@@ -1,0 +1,30 @@
+# Nexus Aurora (M) Sdn Bhd
+
+> Managed IT services provider (MSP) based in Kota Kinabalu, Sabah, Malaysia, serving businesses across Sabah and Malaysia. ISO/IEC 27001:2022 certified. Powered by Pioneer Infotech Singapore, with 17 years of APAC managed-services experience.
+
+- Office: Lot 3 Block C 1st Floor, Lorong Bunga Inai, Taman Land Breeze, 88200 Kota Kinabalu, Sabah, Malaysia
+- Phone / WhatsApp: +60 12 885 9759
+- Email: sales@nexus-aurora.com
+- Hours: Monday to Friday, 9:00 to 18:00 (MYT)
+- Service area: Kota Kinabalu, Sabah, and Malaysia
+
+## Services
+
+- [Managed IT Services (MSP)](https://nexus-aurora.com/managed-services): 24/7 monitoring, proactive maintenance, helpdesk support, backup and disaster recovery, and infrastructure management for Malaysian businesses, with a 99.9% uptime SLA.
+- [Cybersecurity](https://nexus-aurora.com/cybersecurity): security audits, penetration testing, compliance (ISO 27001, PCI-DSS and others) and incident response, from an ISO/IEC 27001:2022 certified team.
+- [Cloud Hosting](https://nexus-aurora.com/cloud-hosting): web hosting, VPS and dedicated servers, business email hosting, free SSL and daily backups.
+- [System & Server Management](https://nexus-aurora.com/system-servers): server consolidation, VMware and Hyper-V virtualization, Microsoft server solutions and backups.
+- [Structured Cabling](https://nexus-aurora.com/structured-cabling): Cat6/Cat6A and fiber optic installation, server rack cabling, and cable testing and certification to TIA/EIA standards.
+- [IT Consultancy](https://nexus-aurora.com/it-consultancy): IT planning for hotels and businesses in Sabah, covering infrastructure design, cabling, PABX, IPTV, wireless networks, vendor selection and project oversight.
+- [Web Development](https://nexus-aurora.com/web-development): custom websites and web applications built with React, Next.js and TypeScript.
+- [Mobile App Development](https://nexus-aurora.com/mobile-app-development): iOS and Android apps using native, React Native and Flutter.
+
+## Products
+
+- [NexusBot](https://nexus-aurora.com/nexusbot): WhatsApp AI assistant for Malaysian SMEs that answers, qualifies and books customers in English, Bahasa Malaysia or Chinese. Plans from a free 7-day trial to Enterprise.
+
+## Company
+
+- [About Nexus Aurora](https://nexus-aurora.com/about)
+- [All services](https://nexus-aurora.com/services)
+- [Contact and free consultation](https://nexus-aurora.com/contact)

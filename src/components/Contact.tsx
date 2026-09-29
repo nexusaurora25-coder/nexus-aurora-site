@@ -16,6 +16,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     service: '',
     budget: '',
@@ -60,7 +61,7 @@ const Contact = () => {
 
       if (!res.ok) throw new Error('Failed to send');
 
-      setFormData({ name: '', email: '', company: '', service: '', budget: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', company: '', service: '', budget: '', message: '' });
       setStatus('success');
       setTimeout(() => setStatus('idle'), 6000);
     } catch (error) {
@@ -143,6 +144,19 @@ const Contact = () => {
                 </div>
               </div>
 
+              <div className="rounded-2xl overflow-hidden shadow-sm">
+                <iframe
+                  src="https://www.google.com/maps?q=Lot+3+Block+C+1st+Floor,+Lorong+Bunga+Inai,+Taman+Land+Breeze,+88200+Kota+Kinabalu,+Sabah,+Malaysia&output=embed"
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Nexus Aurora Office Location"
+                ></iframe>
+              </div>
+
               <div className="flex items-start space-x-4">
                 <div className="h-12 w-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <ClockIllustration className="h-6 w-6 text-primary-600" />
@@ -214,6 +228,21 @@ const Contact = () => {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    placeholder="+60 12-345 6789"
+                  />
+                </div>
+                <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
                     Company Name
                   </label>
@@ -227,6 +256,9 @@ const Contact = () => {
                     placeholder="Your Company"
                   />
                 </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
                     Service Interest
@@ -244,28 +276,28 @@ const Contact = () => {
                     <option value="mobile-app">Mobile App Development</option>
                     <option value="cloud-hosting">Cloud Hosting Services</option>
                     <option value="system-servers">System Servers</option>
+                    <option value="structured-cabling">Structured Cabling</option>
                     <option value="cybersecurity">Cybersecurity</option>
                   </select>
                 </div>
-              </div>
-
-              <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                  Project Budget
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                >
-                  <option value="">Select budget range</option>
-                  <option value="10k-25k">RM 10,000 - RM 25,000</option>
-                  <option value="25k-50k">RM 25,000 - RM 50,000</option>
-                  <option value="50k-100k">RM 50,000 - RM 100,000</option>
-                  <option value="100k+">RM 100,000+</option>
-                </select>
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Budget
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  >
+                    <option value="">Select budget range</option>
+                    <option value="10k-25k">RM 10,000 - RM 25,000</option>
+                    <option value="25k-50k">RM 25,000 - RM 50,000</option>
+                    <option value="50k-100k">RM 50,000 - RM 100,000</option>
+                    <option value="100k+">RM 100,000+</option>
+                  </select>
+                </div>
               </div>
 
               <div>

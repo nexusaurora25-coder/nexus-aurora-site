@@ -65,6 +65,7 @@ const Footer = () => {
                 { label: 'Mobile App Development', href: '/mobile-app-development' },
                 { label: 'Cloud Hosting Services', href: '/cloud-hosting' },
                 { label: 'System Servers', href: '/system-servers' },
+                { label: 'Structured Cabling', href: '/structured-cabling' },
                 { label: 'Cybersecurity', href: '/cybersecurity' }
               ].map((service, index) => (
                 <li key={index}>

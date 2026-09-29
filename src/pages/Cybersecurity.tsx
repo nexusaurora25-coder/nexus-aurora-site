@@ -53,7 +53,7 @@ const Cybersecurity = () => {
   }, [location]);
 
   useSEO({
-    title: 'Cybersecurity Services Malaysia - ISO 27001 Certified | Pen Testing & Security Audits',
+    title: 'Cybersecurity Services in Sabah & Malaysia',
     description: 'ISO/IEC 27001:2022 certified cybersecurity services in Sabah & Malaysia. Security audits, penetration testing, GDPR/HIPAA compliance, and 24/7 incident response to protect your business.',
     keywords: 'cybersecurity Malaysia, ISO 27001 certified Malaysia, penetration testing Malaysia, security audit Sabah, cyber security services Kota Kinabalu, GDPR compliance Malaysia, HIPAA compliance, PCI-DSS Malaysia, incident response, ransomware protection Malaysia, network security Sabah',
     canonicalUrl: 'https://nexus-aurora.com/cybersecurity',
@@ -224,7 +224,7 @@ const Cybersecurity = () => {
 
             <div className="relative scroll-animate opacity-0 translate-x-[50px] transition-all duration-700 delay-300">
               <img
-                src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/generated/cybersecurity.jpg"
                 alt="Cybersecurity Services"
                 className="rounded-2xl shadow-2xl"
               />

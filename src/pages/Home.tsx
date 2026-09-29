@@ -2,14 +2,19 @@ import React from 'react';
 import { useSEO } from '../utils/seo';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import WhyNexusAurora from '../components/WhyNexusAurora';
+import IndustriesStrip from '../components/IndustriesStrip';
 import NexusBotPromo from '../components/NexusBotPromo';
+import SabahCyberHealthCheck from '../components/SabahCyberHealthCheck';
+import TrustSignals from '../components/TrustSignals';
 import About from '../components/About';
 // import Technologies from '../components/Technologies';
+import ClosingCTA from '../components/ClosingCTA';
 import Contact from '../components/Contact';
 
 const Home = () => {
   useSEO({
-    title: 'Nexus Aurora - Managed IT Services, Cybersecurity & Cloud Solutions Malaysia',
+    title: 'IT Support & Managed IT Services in Kota Kinabalu | Nexus Aurora',
     description: 'Nexus Aurora — ISO 27001:2022 certified MSP in Kota Kinabalu, powered by Pioneer Infotech Singapore. 24/7 IT monitoring, cybersecurity, cloud hosting, web development & IT consultancy for Sabah & Malaysian businesses.',
     keywords: 'managed IT services Malaysia, MSP Malaysia, IT support Kota Kinabalu, managed service provider Sabah, 24/7 IT monitoring Malaysia, cybersecurity Malaysia, cloud hosting Sabah, web development Kota Kinabalu, IT consultancy Malaysia, Pioneer Infotech partner, ISO 27001 certified Malaysia, IT outsourcing Sabah, enterprise IT services Malaysia',
     canonicalUrl: 'https://nexus-aurora.com',
@@ -55,7 +60,8 @@ const Home = () => {
           { "@type": "ListItem", "position": 4, "name": "Web Development", "url": "https://nexus-aurora.com/web-development" },
           { "@type": "ListItem", "position": 5, "name": "Mobile App Development", "url": "https://nexus-aurora.com/mobile-app-development" },
           { "@type": "ListItem", "position": 6, "name": "IT Consultancy", "url": "https://nexus-aurora.com/it-consultancy" },
-          { "@type": "ListItem", "position": 7, "name": "System & Server Management", "url": "https://nexus-aurora.com/system-servers" }
+          { "@type": "ListItem", "position": 7, "name": "System & Server Management", "url": "https://nexus-aurora.com/system-servers" },
+          { "@type": "ListItem", "position": 8, "name": "Structured Cabling", "url": "https://nexus-aurora.com/structured-cabling" }
         ]
       }
     }
@@ -65,9 +71,14 @@ const Home = () => {
     <div>
       <Hero />
       <Services />
+      <WhyNexusAurora />
+      <IndustriesStrip />
       <NexusBotPromo />
+      <SabahCyberHealthCheck />
+      <TrustSignals />
       <About />
       {/* <Technologies /> */}
+      <ClosingCTA />
       <Contact />
     </div>
   );

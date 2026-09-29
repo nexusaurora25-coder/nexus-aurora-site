@@ -51,7 +51,7 @@ const MobileAppDevelopment = () => {
   }, [location]);
 
   useSEO({
-    title: 'Mobile App Development Malaysia - iOS, Android, React Native & Flutter',
+    title: 'Mobile App Development in Malaysia (iOS & Android)',
     description: 'Custom iOS and Android app development in Malaysia using React Native and Flutter. Native performance, cross-platform efficiency, and App Store Optimization (ASO) for Sabah businesses.',
     keywords: 'mobile app development Malaysia, iOS app developer Kota Kinabalu, Android app development Malaysia, React Native developer Malaysia, Flutter app development, cross-platform mobile apps, app store optimization Malaysia, mobile application development Sabah, custom app development Malaysia',
     canonicalUrl: 'https://nexus-aurora.com/mobile-app-development',
@@ -216,7 +216,7 @@ const MobileAppDevelopment = () => {
 
             <div className="relative scroll-animate opacity-0 translate-x-[50px] transition-all duration-700 delay-300">
               <img
-                src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/generated/mobile-app-development.jpg"
                 alt="Mobile App Development"
                 className="rounded-2xl shadow-2xl"
               />

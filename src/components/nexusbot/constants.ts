@@ -141,14 +141,14 @@ export const nexusBotFaqItems = [
 ];
 
 export type ChatMessage =
-  | { type: 'in' | 'out'; text: string }
+  | { type: 'in' | 'out'; text: string; time: string }
   | { type: 'typing' };
 
 export const nexusBotChatSequence: ChatMessage[] = [
-  { type: 'in', text: 'Hi, ada stock untuk cable structured Cat6 tak?' },
+  { type: 'in', text: 'Hi, ada stock untuk cable structured Cat6 tak?', time: '11:42 PM' },
   { type: 'typing' },
-  { type: 'out', text: 'Yes! Cat6 structured cabling is available 📦 Want me to check pricing for your building size, or connect you with our sales team?' },
-  { type: 'in', text: 'Pricing pls' },
+  { type: 'out', text: 'Yes! Cat6 structured cabling is available 📦 Want me to check pricing for your building size, or connect you with our sales team?', time: '11:42 PM' },
+  { type: 'in', text: 'Pricing pls', time: '11:43 PM' },
   { type: 'typing' },
-  { type: 'out', text: 'Sending you our quote request form now — one of our engineers will follow up within business hours ✅' },
+  { type: 'out', text: 'Sending you our quote request form now — one of our engineers will follow up within business hours ✅', time: '11:43 PM' },
 ];

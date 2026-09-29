@@ -34,6 +34,7 @@ Deno.serve(async (req: Request) => {
             <table style="width: 100%; border-collapse: collapse;">
               <tr><td style="padding: 8px 0; font-weight: bold; color: #475569; width: 140px;">Name</td><td style="padding: 8px 0;">${data.name}</td></tr>
               <tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Email</td><td style="padding: 8px 0;"><a href="mailto:${data.email}" style="color: #1d4ed8;">${data.email}</a></td></tr>
+              ${data.phone ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Phone</td><td style="padding: 8px 0;"><a href="tel:${data.phone}" style="color: #1d4ed8;">${data.phone}</a></td></tr>` : ""}
               ${data.company ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Company</td><td style="padding: 8px 0;">${data.company}</td></tr>` : ""}
               ${data.service ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Service</td><td style="padding: 8px 0;">${data.service}</td></tr>` : ""}
               ${data.budget ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #475569;">Budget</td><td style="padding: 8px 0;">${data.budget}</td></tr>` : ""}

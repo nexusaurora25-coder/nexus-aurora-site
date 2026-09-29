@@ -9,6 +9,7 @@ import {
   CloudIllustration,
   DatabaseIllustration,
   ShieldIllustration,
+  NetworkIllustration,
   AnimatedDot,
 } from './AnimatedIllustrations';
 
@@ -75,6 +76,13 @@ const Services = () => {
       description: 'System solutions are the foundation to any company, with a roadmap for stability and scalability as key components to the system. Our consulting approach is based on lower TCO design for our clients.',
       features: ['Server Consolidation', 'Microsoft Solution', 'Backup Solution', 'Server and Server Integration', 'Virtualization Solution'],
       link: '/system-servers'
+    },
+    {
+      illustration: NetworkIllustration,
+      title: 'Structured Cabling',
+      description: 'Professional structured cabling solutions for offices, server rooms, and data centers — built to TIA/EIA standards for reliable, future-proof network infrastructure.',
+      features: ['Cat6 / Cat6A Cabling', 'Fiber Optic Installation', 'Server Rack Cabling', 'Cable Certification & Testing', 'TIA/EIA Standards Compliant', 'Office Network Cabling'],
+      link: '/structured-cabling'
     },
     {
       illustration: ShieldIllustration,

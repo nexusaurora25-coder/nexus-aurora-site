@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
 interface BreadcrumbItem {
   name: string;
@@ -10,7 +10,7 @@ interface FAQItem {
   answer: string;
 }
 
-interface SEOProps {
+export interface SEOProps {
   title: string;
   description: string;
   keywords?: string;
@@ -43,6 +43,14 @@ const ORGANIZATION_SCHEMA = {
   "description": "Enterprise-grade Managed IT Services provider in Malaysia, powered by Pioneer Infotech Singapore. Specialising in MSP, cybersecurity, cloud hosting, web development, mobile apps, and IT consultancy.",
   "telephone": "+60-12-885-9759",
   "email": "sales@nexus-aurora.com",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+60-12-885-9759",
+    "email": "sales@nexus-aurora.com",
+    "contactType": "customer service",
+    "areaServed": "MY",
+    "availableLanguage": ["English", "Malay", "Chinese"]
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Lot 3 Block C 1st Floor, Lorong Bunga Inai, Taman Land Breeze",
@@ -96,6 +104,16 @@ const ORGANIZATION_SCHEMA = {
   ]
 };
 
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${BASE_URL}/#website`,
+  "name": "Nexus Aurora",
+  "url": BASE_URL,
+  "inLanguage": "en-MY",
+  "publisher": { "@id": `${BASE_URL}/#organization` }
+};
+
 const buildBreadcrumbSchema = (breadcrumbs: BreadcrumbItem[]) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -120,10 +138,28 @@ const buildFAQSchema = (faqItems: FAQItem[]) => ({
   }))
 });
 
-export const useSEO = ({
+const DEFAULT_TITLE = 'Nexus Aurora | Managed IT Services & Cybersecurity in Sabah, Malaysia';
+
+/** Adds the brand only when the page title doesn't already carry it. */
+export const buildTitle = (title?: string) => {
+  if (!title) return DEFAULT_TITLE;
+  return /nexus\s*aurora/i.test(title) ? title : `${title} | Nexus Aurora`;
+};
+
+type MetaTag = { name?: string; property?: string; content: string };
+
+export interface HeadData {
+  title: string;
+  metaTags: MetaTag[];
+  canonicalUrl?: string;
+  schemas: object[];
+  noindex: boolean;
+}
+
+/** One source of truth for the head, used by the client hook and by the build-time prerender. */
+export const buildHead = ({
   title,
   description,
-  keywords,
   ogImage = `${BASE_URL}/nexus-aurora-og.png`,
   canonicalUrl,
   ogType = 'website',
@@ -131,93 +167,111 @@ export const useSEO = ({
   breadcrumbs,
   faqItems,
   noindex = false
-}: SEOProps) => {
+}: SEOProps): HeadData => {
+  const fullTitle = buildTitle(title);
+
+  const metaTags: MetaTag[] = [
+    { name: 'description', content: description },
+    { name: 'robots', content: noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+    { property: 'og:title', content: fullTitle },
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: ogImage },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
+    { property: 'og:image:alt', content: 'Nexus Aurora - Managed IT Services Malaysia' },
+    { property: 'og:type', content: ogType },
+    { name: 'twitter:title', content: fullTitle },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: ogImage },
+    { name: 'twitter:image:alt', content: 'Nexus Aurora - Managed IT Services Malaysia' }
+  ];
+
+  if (canonicalUrl) {
+    metaTags.push({ property: 'og:url', content: canonicalUrl });
+  }
+
+  const schemas: object[] = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
+  if (structuredData) schemas.push(structuredData);
+  if (breadcrumbs && breadcrumbs.length > 0) schemas.push(buildBreadcrumbSchema(breadcrumbs));
+  if (faqItems && faqItems.length > 0) schemas.push(buildFAQSchema(faqItems));
+
+  return { title: fullTitle, metaTags, canonicalUrl, schemas, noindex };
+};
+
+const escapeAttr = (value: string) =>
+  value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/** Serialises a page's head for the prerendered HTML. Schema scripts are marked so the client can replace them. */
+export const renderHeadToString = (head: HeadData) => {
+  const tags = head.metaTags.map(({ name, property, content }) =>
+    name
+      ? `<meta name="${name}" content="${escapeAttr(content)}" />`
+      : `<meta property="${property}" content="${escapeAttr(content)}" />`
+  );
+  if (head.canonicalUrl) tags.push(`<link rel="canonical" href="${escapeAttr(head.canonicalUrl)}" />`);
+  head.schemas.forEach((schema) => {
+    tags.push(`<script type="application/ld+json" data-seo-schema>${JSON.stringify(schema).replace(/</g, '\u003c')}</script>`);
+  });
+  return tags.join('\n    ');
+};
+
+/**
+ * During the build-time prerender a collector is provided, and useSEO records the page's props
+ * while rendering (effects don't run on the server). In the browser there is no collector.
+ */
+export const SEOCollectorContext = createContext<SEOProps[] | null>(null);
+
+export const useSEO = (props: SEOProps) => {
+  const collector = useContext(SEOCollectorContext);
+  if (collector) collector.push(props);
+
+  const {
+    title, description, keywords, ogImage, canonicalUrl, ogType, structuredData, breadcrumbs, faqItems, noindex
+  } = props;
+
   useEffect(() => {
-    document.title = title
-      ? `${title} | Nexus Aurora (M) Sdn Bhd`
-      : 'Nexus Aurora (M) Sdn Bhd - Managed IT Services & MSP Solutions Malaysia';
+    const head = buildHead(props);
+    document.title = head.title;
 
-    const metaTags = [
-      { name: 'description', content: description },
-      { name: 'robots', content: noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
-      { property: 'og:title', content: title ? `${title} | Nexus Aurora (M) Sdn Bhd` : 'Nexus Aurora - Managed IT Services, Cybersecurity & Cloud Solutions Malaysia' },
-      { property: 'og:description', content: description },
-      { property: 'og:image', content: ogImage },
-      { property: 'og:image:width', content: '1200' },
-      { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: 'Nexus Aurora - Managed IT Services Malaysia' },
-      { property: 'og:type', content: ogType },
-      { property: 'og:locale', content: 'en_MY' },
-      { property: 'og:site_name', content: 'Nexus Aurora (M) Sdn Bhd' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: title ? `${title} | Nexus Aurora (M) Sdn Bhd` : 'Nexus Aurora - Managed IT Services & Cybersecurity Malaysia' },
-      { name: 'twitter:description', content: description },
-      { name: 'twitter:image', content: ogImage },
-      { name: 'twitter:image:alt', content: 'Nexus Aurora - Managed IT Services Malaysia' },
-      { name: 'format-detection', content: 'telephone=no' }
-    ];
-
-    if (keywords) {
-      metaTags.push({ name: 'keywords', content: keywords });
-    }
-
-    if (canonicalUrl) {
-      metaTags.push({ property: 'og:url', content: canonicalUrl });
-    }
-
-    metaTags.forEach(({ name, property, content }) => {
+    head.metaTags.forEach(({ name, property, content }) => {
       const attribute = name ? 'name' : 'property';
-      const value = name || property;
+      const value = (name || property)!;
 
       let element = document.querySelector(`meta[${attribute}="${value}"]`);
-
       if (!element) {
         element = document.createElement('meta');
-        element.setAttribute(attribute, value!);
+        element.setAttribute(attribute, value);
         document.head.appendChild(element);
       }
-
       element.setAttribute('content', content);
     });
 
-    if (canonicalUrl) {
-      let link = document.querySelector('link[rel="canonical"]');
+    let link = document.querySelector('link[rel="canonical"]');
+    if (head.canonicalUrl) {
       if (!link) {
         link = document.createElement('link');
         link.setAttribute('rel', 'canonical');
         document.head.appendChild(link);
       }
-      link.setAttribute('href', canonicalUrl);
+      link.setAttribute('href', head.canonicalUrl);
+    } else {
+      link?.remove();
     }
 
-    const schemaScripts: HTMLScriptElement[] = [];
-
-    const addSchema = (data: object, attr: string) => {
+    // Replace whatever schema is in the head (prerendered or from the previous page).
+    document.head.querySelectorAll('script[data-seo-schema]').forEach((script) => script.remove());
+    const schemaScripts = head.schemas.map((schema) => {
       const script = document.createElement('script');
       script.setAttribute('type', 'application/ld+json');
-      script.setAttribute(attr, 'true');
-      script.textContent = JSON.stringify(data);
+      script.setAttribute('data-seo-schema', '');
+      script.textContent = JSON.stringify(schema);
       document.head.appendChild(script);
-      schemaScripts.push(script);
-    };
-
-    // Always inject global Organization/LocalBusiness schema
-    addSchema(ORGANIZATION_SCHEMA, 'data-org-schema');
-
-    if (structuredData) {
-      addSchema(structuredData, 'data-page-schema');
-    }
-
-    if (breadcrumbs && breadcrumbs.length > 0) {
-      addSchema(buildBreadcrumbSchema(breadcrumbs), 'data-breadcrumb-schema');
-    }
-
-    if (faqItems && faqItems.length > 0) {
-      addSchema(buildFAQSchema(faqItems), 'data-faq-schema');
-    }
+      return script;
+    });
 
     return () => {
       schemaScripts.forEach(script => script.remove());
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title, description, keywords, ogImage, canonicalUrl, ogType, structuredData, breadcrumbs, faqItems, noindex]);
 };

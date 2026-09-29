@@ -53,7 +53,7 @@ const SystemServers = () => {
   }, [location]);
 
   useSEO({
-    title: 'Server Management Malaysia - Consolidation, VMware, Hyper-V & Microsoft Server',
+    title: 'Server Management & Virtualization in Malaysia',
     description: 'Expert server consolidation, VMware & Hyper-V virtualization, Microsoft server solutions, and network infrastructure management in Sabah & Malaysia. Reduce costs and boost performance.',
     keywords: 'server management Malaysia, server consolidation Kota Kinabalu, VMware Malaysia, Hyper-V virtualization Sabah, Microsoft Windows Server Malaysia, Active Directory setup Malaysia, Exchange Server Malaysia, server optimization Sabah, IT infrastructure Malaysia, database management Malaysia, network infrastructure Kota Kinabalu',
     canonicalUrl: 'https://nexus-aurora.com/system-servers',
@@ -226,7 +226,7 @@ const SystemServers = () => {
 
             <div className="relative scroll-animate opacity-0 translate-x-[50px] transition-all duration-700 delay-300">
               <img
-                src="https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/generated/system-servers.jpg"
                 alt="System Server Solutions"
                 className="rounded-2xl shadow-2xl"
               />

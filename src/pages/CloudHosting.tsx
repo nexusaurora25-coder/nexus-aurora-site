@@ -53,7 +53,7 @@ const CloudHosting = () => {
   }, [location]);
 
   useSEO({
-    title: 'Cloud Hosting Malaysia - Web Hosting, VPS & Dedicated Servers | 99.9% Uptime',
+    title: 'Cloud Hosting, VPS & Email Hosting in Malaysia',
     description: 'Reliable web hosting, VPS, and dedicated server solutions in Kota Kinabalu & Malaysia. Free SSL, professional email hosting, daily backups, and 99.9% uptime SLA for your business.',
     keywords: 'cloud hosting Malaysia, web hosting Kota Kinabalu, VPS hosting Malaysia, dedicated server Malaysia, shared hosting Sabah, email hosting Malaysia, business email hosting, SSL certificate Malaysia, 99.9 uptime hosting, affordable hosting Malaysia, website hosting Sabah',
     canonicalUrl: 'https://nexus-aurora.com/cloud-hosting',
@@ -221,7 +221,7 @@ const CloudHosting = () => {
 
             <div className="relative scroll-animate opacity-0 translate-x-[50px] transition-all duration-700 delay-300">
               <img
-                src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/generated/cloud-hosting.jpg"
                 alt="Cloud Hosting Services"
                 className="rounded-2xl shadow-2xl"
               />
