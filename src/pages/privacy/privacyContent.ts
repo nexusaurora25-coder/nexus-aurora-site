@@ -44,7 +44,7 @@ export interface PrivacyContent {
   };
 }
 
-export const PRIVACY_LAST_UPDATED_ISO = '2026-09-29';
+export const PRIVACY_LAST_UPDATED_ISO = '2026-10-04';
 
 export const DPO = { ...COMPANY, jpdpUrl: 'https://www.pdp.gov.my' };
 
@@ -54,7 +54,7 @@ const en: PrivacyContent = {
   subtitle:
     'How Nexus Aurora collects, uses and protects personal data under Malaysia’s Personal Data Protection Act 2010, and how to ask us about yours.',
   lastUpdatedLabel: 'Last updated',
-  lastUpdated: '29 September 2026',
+  lastUpdated: '4 October 2026',
   languageLabel: 'Language',
   tocLabel: 'On this page',
   jumpLabel: 'Jump to a section',
@@ -85,6 +85,12 @@ const en: PrivacyContent = {
       collect: 'Account name, email, company, plan and billing records',
       purpose: 'To create and run your account and bill your plan',
       shared: 'Supabase (NexusBot app), Stripe (card payments)',
+    },
+    {
+      source: 'NexusBot channel connections (WhatsApp, Facebook Messenger, Instagram)',
+      collect: 'When a business connects a channel through Facebook Login: the connecting person’s Facebook name and ID, the business’s Page, Instagram or WhatsApp account IDs and access tokens, and the messages, names and profile pictures of customers who message that business',
+      purpose: 'To show and answer the business’s customer conversations in NexusBot, including AI-assisted replies',
+      shared: 'Meta (WhatsApp, Messenger, Instagram), Supabase and Hostinger (NexusBot app and server), Anthropic (AI replies)',
     },
     {
       source: 'IT services we deliver',
@@ -123,6 +129,11 @@ const en: PrivacyContent = {
       title: 'Move your data',
       body: 'Ask for your data in a commonly used format to give to another provider, where the law allows.',
       subject: 'PDPA data portability request',
+    },
+    {
+      title: 'Delete your data',
+      body: 'Ask us to delete your personal data, including data we received from Facebook, Instagram or WhatsApp through NexusBot. We confirm and complete it within 30 days, unless the law requires us to keep it.',
+      subject: 'Data deletion request',
     },
   ],
   clauses: [
@@ -181,7 +192,7 @@ const en: PrivacyContent = {
         'We share personal data only where needed for the purposes above, with:',
         [
           'Pioneer Infotech group companies in Singapore that help us deliver services;',
-          'service providers that host or process data for us: Supabase (form storage, email delivery and the NexusBot app), Microsoft (email and Outlook Bookings), Meta (WhatsApp), Stripe (payments), Netlify (website hosting) and Google (web fonts);',
+          'service providers that host or process data for us: Supabase (form storage, email delivery and the NexusBot app), Hostinger (NexusBot server hosting), Anthropic (AI-assisted replies in NexusBot), Microsoft (email and Outlook Bookings), Meta (WhatsApp, Facebook Messenger and Instagram), Stripe (payments), Netlify (website hosting) and Google (web fonts);',
           'our professional advisers, such as auditors and lawyers; and',
           'government agencies, regulators or courts where the law requires it.',
         ],
@@ -231,6 +242,7 @@ const en: PrivacyContent = {
       title: 'How long we keep it',
       body: [
         'We keep personal data only for as long as we need it for the purpose it was collected for, or as long as the law requires. After that we delete it or remove anything that identifies you.',
+        'Data deletion: to have your data deleted, email our Data Protection Officer (clause 15) with the subject “Data deletion request”. A business can also disconnect a WhatsApp, Messenger or Instagram channel in NexusBot (Settings → Channels → Disconnect), which deletes that channel’s access tokens straight away, or close its NexusBot account, after which we delete its data, including data received from Meta, within 30 days. You can also remove NexusBot’s access at any time in your Facebook settings under Business Integrations.',
       ],
     },
     {
@@ -288,7 +300,7 @@ const ms: PrivacyContent = {
   subtitle:
     'Cara Nexus Aurora mengumpul, menggunakan dan melindungi data peribadi di bawah Akta Perlindungan Data Peribadi 2010 Malaysia, dan cara untuk bertanya kepada kami tentang data anda.',
   lastUpdatedLabel: 'Kemas kini terakhir',
-  lastUpdated: '29 September 2026',
+  lastUpdated: '4 October 2026',
   languageLabel: 'Bahasa',
   tocLabel: 'Kandungan',
   jumpLabel: 'Pergi ke bahagian',
@@ -319,6 +331,12 @@ const ms: PrivacyContent = {
       collect: 'Nama akaun, e-mel, syarikat, pelan dan rekod bil',
       purpose: 'Untuk membuka dan mengendalikan akaun anda serta mengebil pelan anda',
       shared: 'Supabase (aplikasi NexusBot), Stripe (bayaran kad)',
+    },
+    {
+      source: 'Sambungan saluran NexusBot (WhatsApp, Facebook Messenger, Instagram)',
+      collect: 'Apabila sesebuah perniagaan menyambungkan saluran melalui Log Masuk Facebook: nama dan ID Facebook orang yang menyambung, ID akaun Page, Instagram atau WhatsApp perniagaan serta token aksesnya, dan mesej, nama serta gambar profil pelanggan yang menghantar mesej kepada perniagaan tersebut',
+      purpose: 'Untuk memaparkan dan menjawab perbualan pelanggan perniagaan di NexusBot, termasuk balasan berbantukan AI',
+      shared: 'Meta (WhatsApp, Messenger, Instagram), Supabase dan Hostinger (aplikasi dan pelayan NexusBot), Anthropic (balasan AI)',
     },
     {
       source: 'Perkhidmatan IT yang kami sediakan',
@@ -357,6 +375,11 @@ const ms: PrivacyContent = {
       title: 'Pindahkan data anda',
       body: 'Minta data anda dalam format yang biasa digunakan untuk diberikan kepada pembekal lain, setakat yang dibenarkan oleh undang-undang.',
       subject: 'Permintaan kemudahalihan data PDPA',
+    },
+    {
+      title: 'Padam data anda',
+      body: 'Minta kami memadamkan data peribadi anda, termasuk data yang kami terima daripada Facebook, Instagram atau WhatsApp melalui NexusBot. Kami mengesahkan dan menyelesaikannya dalam tempoh 30 hari, melainkan undang-undang menghendaki kami menyimpannya.',
+      subject: 'Permintaan pemadaman data',
     },
   ],
   clauses: [
@@ -415,7 +438,7 @@ const ms: PrivacyContent = {
         'Kami berkongsi data peribadi hanya apabila perlu untuk tujuan di atas, dengan:',
         [
           'syarikat kumpulan Pioneer Infotech di Singapura yang membantu kami menyediakan perkhidmatan;',
-          'pembekal perkhidmatan yang menyimpan atau memproses data untuk kami: Supabase (penyimpanan borang, penghantaran e-mel dan aplikasi NexusBot), Microsoft (e-mel dan Outlook Bookings), Meta (WhatsApp), Stripe (bayaran), Netlify (pengehosan laman web) dan Google (fon web);',
+          'pembekal perkhidmatan yang menyimpan atau memproses data untuk kami: Supabase (penyimpanan borang, penghantaran e-mel dan aplikasi NexusBot), Hostinger (pengehosan pelayan NexusBot), Anthropic (balasan berbantukan AI dalam NexusBot), Microsoft (e-mel dan Outlook Bookings), Meta (WhatsApp, Facebook Messenger dan Instagram), Stripe (bayaran), Netlify (pengehosan laman web) dan Google (fon web);',
           'penasihat profesional kami, seperti juruaudit dan peguam; dan',
           'agensi kerajaan, pengawal selia atau mahkamah apabila dikehendaki oleh undang-undang.',
         ],
@@ -465,6 +488,7 @@ const ms: PrivacyContent = {
       title: 'Tempoh penyimpanan',
       body: [
         'Kami menyimpan data peribadi hanya selama yang diperlukan untuk tujuan ia dikumpul, atau selama yang dikehendaki oleh undang-undang. Selepas itu, kami memadamkannya atau membuang apa-apa yang boleh mengenal pasti anda.',
+        'Pemadaman data: untuk meminta data anda dipadamkan, e-mel Pegawai Perlindungan Data kami (klausa 15) dengan tajuk “Permintaan pemadaman data”. Perniagaan juga boleh memutuskan sambungan saluran WhatsApp, Messenger atau Instagram dalam NexusBot (Tetapan → Saluran → Putuskan sambungan), yang memadamkan token akses saluran tersebut dengan serta-merta, atau menutup akaun NexusBotnya, dan selepas itu kami memadamkan datanya, termasuk data yang diterima daripada Meta, dalam tempoh 30 hari. Anda juga boleh membuang akses NexusBot pada bila-bila masa dalam tetapan Facebook anda di bawah Integrasi Perniagaan.',
       ],
     },
     {
