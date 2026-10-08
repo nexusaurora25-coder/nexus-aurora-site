@@ -102,18 +102,11 @@ export const nexusBotPlans: NexusBotPlan[] = [
     priceMonthly: null,
     priceAnnual: null,
     customPrice: 'Custom',
-    customNote: 'From RM 1,500 / mo',
+    customNote: 'Tailor the right price package for your team',
     billedNote: '',
-    ctaLabel: 'Talk to sales',
+    ctaLabel: 'Contact Us',
     ctaTarget: 'whatsapp',
-    features: [
-      { text: 'Unlimited connected channels', included: true },
-      { text: 'Unlimited team seats', included: true },
-      { text: 'Everything in Business', included: true },
-      { text: 'Unlimited AI auto-replies', included: true },
-      { text: 'Custom API access & webhooks', included: true },
-      { text: 'Dedicated account manager, SLA', included: true },
-    ],
+    features: [],
   },
 ];
 

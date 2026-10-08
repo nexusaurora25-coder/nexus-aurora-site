@@ -127,49 +127,7 @@ const NexusBotPricing: React.FC = () => {
                         : plan.billedNote)}
                 </p>
 
-                {plan.checkoutTier && SELF_CHECKOUT_ENABLED ? (
-                  <button
-                    type="button"
-                    onClick={() => handleCheckout(plan.checkoutTier!)}
-                    disabled={loadingTier !== null}
-                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mb-6 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed ${
-                      plan.featured
-                        ? 'bg-primary-600 text-white hover:bg-primary-700'
-                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
-                    }`}
-                  >
-                    {loadingTier === plan.checkoutTier && (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    )}
-                    {loadingTier === plan.checkoutTier ? 'Redirecting…' : plan.ctaLabel}
-                  </button>
-                ) : plan.checkoutTier || plan.ctaTarget === 'app' ? (
-                  <a
-                    href={NEXUSBOT_LOGIN_URL}
-                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mb-6 ${
-                      plan.featured
-                        ? 'bg-primary-600 text-white hover:bg-primary-700'
-                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
-                    }`}
-                  >
-                    {plan.ctaLabel}
-                  </a>
-                ) : (
-                  <a
-                    href={nexusBotWhatsAppLink(`Hi, I'm interested in the NexusBot ${plan.name} plan.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mb-6 ${
-                      plan.featured
-                        ? 'bg-primary-600 text-white hover:bg-primary-700'
-                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
-                    }`}
-                  >
-                    {plan.ctaLabel}
-                  </a>
-                )}
-
-                <ul className="space-y-3 mt-auto">
+                <ul className="space-y-3 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature.text} className="flex items-start gap-2 text-sm">
                       {feature.included ? (
@@ -183,6 +141,48 @@ const NexusBotPricing: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                {plan.checkoutTier && SELF_CHECKOUT_ENABLED ? (
+                  <button
+                    type="button"
+                    onClick={() => handleCheckout(plan.checkoutTier!)}
+                    disabled={loadingTier !== null}
+                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mt-6 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed ${
+                      plan.featured
+                        ? 'bg-primary-600 text-white hover:bg-primary-700'
+                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
+                    }`}
+                  >
+                    {loadingTier === plan.checkoutTier && (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    )}
+                    {loadingTier === plan.checkoutTier ? 'Redirecting…' : plan.ctaLabel}
+                  </button>
+                ) : plan.checkoutTier || plan.ctaTarget === 'app' ? (
+                  <a
+                    href={NEXUSBOT_LOGIN_URL}
+                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mt-6 ${
+                      plan.featured
+                        ? 'bg-primary-600 text-white hover:bg-primary-700'
+                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
+                    }`}
+                  >
+                    {plan.ctaLabel}
+                  </a>
+                ) : (
+                  <a
+                    href={nexusBotWhatsAppLink(`Hi, I'm interested in the NexusBot ${plan.name} plan.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full text-center px-4 py-3 rounded-full font-semibold transition-colors mt-6 ${
+                      plan.featured
+                        ? 'bg-primary-600 text-white hover:bg-primary-700'
+                        : 'bg-primary-50 text-primary-700 hover:bg-primary-100'
+                    }`}
+                  >
+                    {plan.ctaLabel}
+                  </a>
+                )}
               </div>
             );
           })}
