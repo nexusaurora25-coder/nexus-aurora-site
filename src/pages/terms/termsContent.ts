@@ -44,7 +44,7 @@ const en: TermsContent = {
   subtitle:
     'The terms for using this website and for the IT services and NexusBot subscriptions provided by Nexus Aurora. Your signed agreement or quotation adds the details of your own service.',
   lastUpdatedLabel: 'Last updated',
-  lastUpdated: '29 September 2026',
+  lastUpdated: '11 November 2026',
   languageLabel: 'Language',
   tocLabel: 'On this page',
   jumpLabel: 'Jump to a section',
@@ -213,9 +213,10 @@ const en: TermsContent = {
       body: [
         [
           'You must follow the WhatsApp Business terms and Meta’s messaging and commerce policies, and get your customers’ opt-in before messaging them.',
+          'If you connect TikTok, you must also follow TikTok’s Terms of Service, Business Messaging policies and Community Guidelines. TikTok only lets businesses reply to people who message them first, within TikTok’s time and message limits; NexusBot applies these limits and cannot send broadcasts or start conversations on TikTok.',
           'You are responsible for the messages you send and for the automations, flows and information you set up in NexusBot.',
           'NexusBot uses AI to draft and send replies. AI replies can be inaccurate, so review your settings and conversations regularly, and do not rely on AI replies for legal, medical, financial or other professional advice.',
-          'We may suspend an account whose use puts a WhatsApp number, our platform or other customers at risk, and will tell you why.',
+          'We may suspend an account whose use puts a WhatsApp number, TikTok account, our platform or other customers at risk, and will tell you why.',
           'For the personal data of your customers, you are the data controller and we act as your data processor (see clause 13 of our Privacy Policy).',
         ],
       ],
@@ -333,7 +334,7 @@ const ms: TermsContent = {
   subtitle:
     'Terma untuk menggunakan laman web ini dan untuk perkhidmatan IT serta langganan NexusBot yang disediakan oleh Nexus Aurora. Perjanjian atau sebut harga yang anda tandatangani menambah butiran perkhidmatan anda sendiri.',
   lastUpdatedLabel: 'Kemas kini terakhir',
-  lastUpdated: '29 September 2026',
+  lastUpdated: '11 November 2026',
   languageLabel: 'Bahasa',
   tocLabel: 'Kandungan',
   jumpLabel: 'Pergi ke bahagian',
@@ -502,9 +503,10 @@ const ms: TermsContent = {
       body: [
         [
           'Anda mesti mematuhi terma WhatsApp Business serta dasar pemesejan dan perdagangan Meta, dan mendapatkan persetujuan pelanggan anda sebelum menghantar mesej kepada mereka.',
+          'Jika anda menyambungkan TikTok, anda juga mesti mematuhi Terma Perkhidmatan, dasar Business Messaging dan Garis Panduan Komuniti TikTok. TikTok hanya membenarkan perniagaan membalas orang yang menghantar mesej kepada mereka terlebih dahulu, dalam had masa dan had mesej TikTok; NexusBot menguatkuasakan had ini dan tidak boleh menghantar siaran atau memulakan perbualan di TikTok.',
           'Anda bertanggungjawab ke atas mesej yang anda hantar dan ke atas automasi, aliran dan maklumat yang anda tetapkan dalam NexusBot.',
           'NexusBot menggunakan AI untuk merangka dan menghantar balasan. Balasan AI boleh jadi tidak tepat, jadi semak tetapan dan perbualan anda dengan kerap, dan jangan bergantung pada balasan AI untuk nasihat undang-undang, perubatan, kewangan atau nasihat profesional lain.',
-          'Kami boleh menggantung akaun yang penggunaannya membahayakan nombor WhatsApp, platform kami atau pelanggan lain, dan akan memaklumkan sebabnya kepada anda.',
+          'Kami boleh menggantung akaun yang penggunaannya membahayakan nombor WhatsApp, akaun TikTok, platform kami atau pelanggan lain, dan akan memaklumkan sebabnya kepada anda.',
           'Bagi data peribadi pelanggan anda, anda adalah pengawal data dan kami bertindak sebagai pemproses data anda (lihat klausa 13 Dasar Privasi kami).',
         ],
       ],

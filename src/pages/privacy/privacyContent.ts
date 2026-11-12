@@ -54,7 +54,7 @@ const en: PrivacyContent = {
   subtitle:
     'How Nexus Aurora collects, uses and protects personal data under Malaysia’s Personal Data Protection Act 2010, and how to ask us about yours.',
   lastUpdatedLabel: 'Last updated',
-  lastUpdated: '4 October 2026',
+  lastUpdated: '11 November 2026',
   languageLabel: 'Language',
   tocLabel: 'On this page',
   jumpLabel: 'Jump to a section',
@@ -91,6 +91,12 @@ const en: PrivacyContent = {
       collect: 'When a business connects a channel through Facebook Login: the connecting person’s Facebook name and ID, the business’s Page, Instagram or WhatsApp account IDs and access tokens, and the messages, names and profile pictures of customers who message that business',
       purpose: 'To show and answer the business’s customer conversations in NexusBot, including AI-assisted replies',
       shared: 'Meta (WhatsApp, Messenger, Instagram), Supabase and Hostinger (NexusBot app and server), Anthropic (AI replies)',
+    },
+    {
+      source: 'NexusBot TikTok connection',
+      collect: 'When a business connects its TikTok Business Account through TikTok’s authorization page: the TikTok account’s ID, username and access tokens, and the direct messages, usernames and conversation IDs of TikTok users who message that business',
+      purpose: 'To show and answer the business’s TikTok direct messages in NexusBot, including AI-assisted replies',
+      shared: 'TikTok (Business Messaging), Supabase and Hostinger (NexusBot app and server), Anthropic (AI replies)',
     },
     {
       source: 'IT services we deliver',
@@ -132,7 +138,7 @@ const en: PrivacyContent = {
     },
     {
       title: 'Delete your data',
-      body: 'Ask us to delete your personal data, including data we received from Facebook, Instagram or WhatsApp through NexusBot. We confirm and complete it within 30 days, unless the law requires us to keep it.',
+      body: 'Ask us to delete your personal data, including data we received from Facebook, Instagram, WhatsApp or TikTok through NexusBot. We confirm and complete it within 30 days, unless the law requires us to keep it.',
       subject: 'Data deletion request',
     },
   ],
@@ -192,7 +198,7 @@ const en: PrivacyContent = {
         'We share personal data only where needed for the purposes above, with:',
         [
           'Pioneer Infotech group companies in Singapore that help us deliver services;',
-          'service providers that host or process data for us: Supabase (form storage, email delivery and the NexusBot app), Hostinger (NexusBot server hosting), Anthropic (AI-assisted replies in NexusBot), Microsoft (email and Outlook Bookings), Meta (WhatsApp, Facebook Messenger and Instagram), Stripe (payments), Netlify (website hosting) and Google (web fonts);',
+          'service providers that host or process data for us: Supabase (form storage, email delivery and the NexusBot app), Hostinger (NexusBot server hosting), Anthropic (AI-assisted replies in NexusBot), Microsoft (email and Outlook Bookings), Meta (WhatsApp, Facebook Messenger and Instagram), TikTok (TikTok direct messages), Stripe (payments), Netlify (website hosting) and Google (web fonts);',
           'our professional advisers, such as auditors and lawyers; and',
           'government agencies, regulators or courts where the law requires it.',
         ],
@@ -242,7 +248,8 @@ const en: PrivacyContent = {
       title: 'How long we keep it',
       body: [
         'We keep personal data only for as long as we need it for the purpose it was collected for, or as long as the law requires. After that we delete it or remove anything that identifies you.',
-        'Data deletion: to have your data deleted, email our Data Protection Officer (clause 15) with the subject “Data deletion request”. A business can also disconnect a WhatsApp, Messenger or Instagram channel in NexusBot (Settings → Channels → Disconnect), which deletes that channel’s access tokens straight away, or close its NexusBot account, after which we delete its data, including data received from Meta, within 30 days. You can also remove NexusBot’s access at any time in your Facebook settings under Business Integrations.',
+        'Data deletion: to have your data deleted, email our Data Protection Officer (clause 15) with the subject “Data deletion request”. A business can also disconnect a WhatsApp, Messenger, Instagram or TikTok channel in NexusBot (Settings → Channels → Disconnect), which deletes that channel’s access tokens straight away, or close its NexusBot account, after which we delete its data, including data received from Meta, within 30 days. You can also remove NexusBot’s access at any time in your Facebook settings under Business Integrations.',
+        'TikTok: when a business disconnects TikTok in NexusBot (Settings → Channels → TikTok → Disconnect), we delete its TikTok access tokens straight away and, if the business chooses, its TikTok conversations, messages and TikTok-only contacts. If a business removes NexusBot’s access in TikTok or closes its NexusBot account, we delete the data we received from TikTok within 30 days. A TikTok user who wants their messages deleted can ask the business they messaged, or email our Data Protection Officer.',
       ],
     },
     {
@@ -258,6 +265,7 @@ const en: PrivacyContent = {
       title: 'When we handle data for our clients',
       body: [
         'When we provide managed IT services or run NexusBot for a business, we may process personal data of that business’s staff and customers. In those cases we act as a data processor on our client’s instructions and under our contract with them. Questions about that data should go to the business concerned first.',
+        'We use data received from TikTok, WhatsApp, Messenger and Instagram only to provide NexusBot to the business that connected the channel. We do not sell it, use it for advertising, or use it to train AI models.',
       ],
     },
     {
@@ -300,7 +308,7 @@ const ms: PrivacyContent = {
   subtitle:
     'Cara Nexus Aurora mengumpul, menggunakan dan melindungi data peribadi di bawah Akta Perlindungan Data Peribadi 2010 Malaysia, dan cara untuk bertanya kepada kami tentang data anda.',
   lastUpdatedLabel: 'Kemas kini terakhir',
-  lastUpdated: '4 October 2026',
+  lastUpdated: '11 November 2026',
   languageLabel: 'Bahasa',
   tocLabel: 'Kandungan',
   jumpLabel: 'Pergi ke bahagian',
@@ -337,6 +345,12 @@ const ms: PrivacyContent = {
       collect: 'Apabila sesebuah perniagaan menyambungkan saluran melalui Log Masuk Facebook: nama dan ID Facebook orang yang menyambung, ID akaun Page, Instagram atau WhatsApp perniagaan serta token aksesnya, dan mesej, nama serta gambar profil pelanggan yang menghantar mesej kepada perniagaan tersebut',
       purpose: 'Untuk memaparkan dan menjawab perbualan pelanggan perniagaan di NexusBot, termasuk balasan berbantukan AI',
       shared: 'Meta (WhatsApp, Messenger, Instagram), Supabase dan Hostinger (aplikasi dan pelayan NexusBot), Anthropic (balasan AI)',
+    },
+    {
+      source: 'Sambungan TikTok NexusBot',
+      collect: 'Apabila sesebuah perniagaan menyambungkan Akaun Perniagaan TikToknya melalui halaman kebenaran TikTok: ID akaun TikTok, nama pengguna dan token aksesnya, serta mesej langsung, nama pengguna dan ID perbualan pengguna TikTok yang menghantar mesej kepada perniagaan tersebut',
+      purpose: 'Untuk memaparkan dan menjawab mesej langsung TikTok perniagaan di NexusBot, termasuk balasan berbantukan AI',
+      shared: 'TikTok (Business Messaging), Supabase dan Hostinger (aplikasi dan pelayan NexusBot), Anthropic (balasan AI)',
     },
     {
       source: 'Perkhidmatan IT yang kami sediakan',
@@ -378,7 +392,7 @@ const ms: PrivacyContent = {
     },
     {
       title: 'Padam data anda',
-      body: 'Minta kami memadamkan data peribadi anda, termasuk data yang kami terima daripada Facebook, Instagram atau WhatsApp melalui NexusBot. Kami mengesahkan dan menyelesaikannya dalam tempoh 30 hari, melainkan undang-undang menghendaki kami menyimpannya.',
+      body: 'Minta kami memadamkan data peribadi anda, termasuk data yang kami terima daripada Facebook, Instagram, WhatsApp atau TikTok melalui NexusBot. Kami mengesahkan dan menyelesaikannya dalam tempoh 30 hari, melainkan undang-undang menghendaki kami menyimpannya.',
       subject: 'Permintaan pemadaman data',
     },
   ],
@@ -438,7 +452,7 @@ const ms: PrivacyContent = {
         'Kami berkongsi data peribadi hanya apabila perlu untuk tujuan di atas, dengan:',
         [
           'syarikat kumpulan Pioneer Infotech di Singapura yang membantu kami menyediakan perkhidmatan;',
-          'pembekal perkhidmatan yang menyimpan atau memproses data untuk kami: Supabase (penyimpanan borang, penghantaran e-mel dan aplikasi NexusBot), Hostinger (pengehosan pelayan NexusBot), Anthropic (balasan berbantukan AI dalam NexusBot), Microsoft (e-mel dan Outlook Bookings), Meta (WhatsApp, Facebook Messenger dan Instagram), Stripe (bayaran), Netlify (pengehosan laman web) dan Google (fon web);',
+          'pembekal perkhidmatan yang menyimpan atau memproses data untuk kami: Supabase (penyimpanan borang, penghantaran e-mel dan aplikasi NexusBot), Hostinger (pengehosan pelayan NexusBot), Anthropic (balasan berbantukan AI dalam NexusBot), Microsoft (e-mel dan Outlook Bookings), Meta (WhatsApp, Facebook Messenger dan Instagram), TikTok (mesej langsung TikTok), Stripe (bayaran), Netlify (pengehosan laman web) dan Google (fon web);',
           'penasihat profesional kami, seperti juruaudit dan peguam; dan',
           'agensi kerajaan, pengawal selia atau mahkamah apabila dikehendaki oleh undang-undang.',
         ],
@@ -488,7 +502,8 @@ const ms: PrivacyContent = {
       title: 'Tempoh penyimpanan',
       body: [
         'Kami menyimpan data peribadi hanya selama yang diperlukan untuk tujuan ia dikumpul, atau selama yang dikehendaki oleh undang-undang. Selepas itu, kami memadamkannya atau membuang apa-apa yang boleh mengenal pasti anda.',
-        'Pemadaman data: untuk meminta data anda dipadamkan, e-mel Pegawai Perlindungan Data kami (klausa 15) dengan tajuk “Permintaan pemadaman data”. Perniagaan juga boleh memutuskan sambungan saluran WhatsApp, Messenger atau Instagram dalam NexusBot (Tetapan → Saluran → Putuskan sambungan), yang memadamkan token akses saluran tersebut dengan serta-merta, atau menutup akaun NexusBotnya, dan selepas itu kami memadamkan datanya, termasuk data yang diterima daripada Meta, dalam tempoh 30 hari. Anda juga boleh membuang akses NexusBot pada bila-bila masa dalam tetapan Facebook anda di bawah Integrasi Perniagaan.',
+        'Pemadaman data: untuk meminta data anda dipadamkan, e-mel Pegawai Perlindungan Data kami (klausa 15) dengan tajuk “Permintaan pemadaman data”. Perniagaan juga boleh memutuskan sambungan saluran WhatsApp, Messenger, Instagram atau TikTok dalam NexusBot (Tetapan → Saluran → Putuskan sambungan), yang memadamkan token akses saluran tersebut dengan serta-merta, atau menutup akaun NexusBotnya, dan selepas itu kami memadamkan datanya, termasuk data yang diterima daripada Meta, dalam tempoh 30 hari. Anda juga boleh membuang akses NexusBot pada bila-bila masa dalam tetapan Facebook anda di bawah Integrasi Perniagaan.',
+        'TikTok: apabila sesebuah perniagaan memutuskan sambungan TikTok dalam NexusBot (Tetapan → Saluran → TikTok → Putuskan sambungan), kami memadamkan token akses TikToknya dengan serta-merta dan, jika perniagaan memilih, perbualan, mesej dan kenalan TikTok sahaja miliknya. Jika sesebuah perniagaan membuang akses NexusBot dalam TikTok atau menutup akaun NexusBotnya, kami memadamkan data yang kami terima daripada TikTok dalam tempoh 30 hari. Pengguna TikTok yang mahu mesej mereka dipadamkan boleh meminta perniagaan yang mereka hubungi, atau e-mel Pegawai Perlindungan Data kami.',
       ],
     },
     {
@@ -504,6 +519,7 @@ const ms: PrivacyContent = {
       title: 'Apabila kami mengendalikan data bagi pihak pelanggan',
       body: [
         'Apabila kami menyediakan perkhidmatan IT terurus atau mengendalikan NexusBot untuk sesebuah perniagaan, kami mungkin memproses data peribadi kakitangan dan pelanggan perniagaan tersebut. Dalam keadaan itu, kami bertindak sebagai pemproses data atas arahan pelanggan kami dan di bawah kontrak kami dengan mereka. Pertanyaan tentang data tersebut hendaklah diajukan kepada perniagaan berkenaan terlebih dahulu.',
+        'Kami menggunakan data yang diterima daripada TikTok, WhatsApp, Messenger dan Instagram hanya untuk menyediakan NexusBot kepada perniagaan yang menyambungkan saluran tersebut. Kami tidak menjualnya, menggunakannya untuk pengiklanan, atau menggunakannya untuk melatih model AI.',
       ],
     },
     {
